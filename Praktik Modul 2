@@ -1,0 +1,55 @@
+CONTOH 1 :
+>> sys=tf([1 2],[1 4 3])
+
+sys =
+ 
+      s + 2
+  -------------
+  s^2 + 4 s + 3
+ 
+Continuous-time transfer function.
+Model Properties
+>> impulse(sys)
+
+Contoh 2 :
+>> A = [-0.5572,-0.7814;0.7814,0];
+B = [1,-1;0,2];
+C = [1.9691,6.4493];
+>> sys = ss(A,B,C,0)
+
+sys =
+ 
+  A = 
+            x1       x2
+   x1  -0.5572  -0.7814
+   x2   0.7814        0
+ 
+  B = 
+       u1  u2
+   x1   1  -1
+   x2   0   2
+ 
+  C = 
+          x1     x2
+   y1  1.969  6.449
+ 
+  D = 
+       u1  u2
+   y1   0   0
+ 
+Continuous-time state-space model.
+Model Properties
+>> impulse(sys)
+>> tf(sys)
+
+ans =
+ 
+  From input 1 to output:
+      1.969 s + 5.039
+  -----------------------
+  s^2 + 0.5572 s + 0.6106
+ 
+  From input 2 to output:
+     10.93 s - 0.9297
+  -----------------------
+  s^2 + 0.5572 s + 0.6106
