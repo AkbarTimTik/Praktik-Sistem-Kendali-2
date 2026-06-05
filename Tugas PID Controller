@@ -1,0 +1,169 @@
+Grafik 1
+% Parameter sistem
+J = 0.05;
+b = 0.25;
+Ke = 0.01;
+Kt = 0.01;
+R = 1;
+L = 0.75;
+
+% Tentukan nilai Kp, Ki, dan Kd untuk menghasilkan:
+% Fast rise time; Minimal overshoot; Zero steady-state error
+
+% Open-Loop Step Response
+s = tf('s'); % Fungsi transfer
+P_motor = Ke/((J*s+b)*(L*s+R)+Kt^2); % Persamaan sistem
+
+% Tentukan nilai PID
+Kp = 250; %gain proporsional
+Ki = 200; %gain integral
+Kd = 50; %gain derivative
+
+% Analisa PID
+C = pid(Kp,Ki,Kd);
+T = feedback(C*P_motor,1);
+t = 0:0.01:3;
+step(T,t)
+stepinfo(T)
+
+% Menghitung Steady State Error
+[y,t_out] = step(T,t);
+nilai_akhir_response = y(end);
+steady_state_error = abs(1 - nilai_akhir_response);
+steady_state_errorpersen = steady_state_error * 100
+--------------------------------------------------------------------------------------
+Grafik 2
+% Parameter sistem
+J = 0.05;
+b = 0.25;
+Ke = 0.01;
+Kt = 0.01;
+R = 1;
+L = 0.75;
+
+% Tentukan nilai Kp, Ki, dan Kd untuk menghasilkan:
+% Fast rise time; Minimal overshoot; Zero steady-state error
+
+% Open-Loop Step Response
+s = tf('s'); % Fungsi transfer
+P_motor = Ke/((J*s+b)*(L*s+R)+Kt^2); % Persamaan sistem
+
+% Tentukan nilai PID
+Kp = 100; %gain proporsional
+Ki = 300; %gain integral
+Kd = 150; %gain derivative
+
+% Analisa PID
+C = pid(Kp,Ki,Kd);
+T = feedback(C*P_motor,1);
+t = 0:0.01:5;
+step(T,t)
+stepinfo(T)
+
+% Menghitung Steady State Error
+[y,t_out] = step(T,t);
+nilai_akhir_response = y(end);
+steady_state_error = abs(1 - nilai_akhir_response);
+steady_state_errorpersen = steady_state_error * 100
+-----------------------------------------------------------------------------------------------------
+Grafik 3
+% Parameter sistem
+J = 0.05;
+b = 0.25;
+Ke = 0.01;
+Kt = 0.01;
+R = 1;
+L = 0.75;
+
+% Tentukan nilai Kp, Ki, dan Kd untuk menghasilkan:
+% Fast rise time; Minimal overshoot; Zero steady-state error
+
+% Open-Loop Step Response
+s = tf('s'); % Fungsi transfer
+P_motor = Ke/((J*s+b)*(L*s+R)+Kt^2); % Persamaan sistem
+
+% Tentukan nilai PID
+Kp = 200; %gain proporsional
+Ki = 30; %gain integral
+Kd = 30; %gain derivative
+
+% Analisa PID
+C = pid(Kp,Ki,Kd);
+T = feedback(C*P_motor,1);
+t = 0:1:12;
+step(T,t)
+stepinfo(T)
+
+% Menghitung Steady State Error
+[y,t_out] = step(T,t);
+nilai_akhir_response = y(end);
+steady_state_error = abs(1 - nilai_akhir_response);
+steady_state_errorpersen = steady_state_error * 100
+--------------------------------------------------------------------------------
+Grafik 4
+% Parameter sistem
+J = 0.05;
+b = 0.25;
+Ke = 0.01;
+Kt = 0.01;
+R = 1;
+L = 0.75;
+
+% Tentukan nilai Kp, Ki, dan Kd untuk menghasilkan:
+% Fast rise time; Minimal overshoot; Zero steady-state error
+
+% Open-Loop Step Response
+s = tf('s'); % Fungsi transfer
+P_motor = Ke/((J*s+b)*(L*s+R)+Kt^2); % Persamaan sistem
+
+% Tentukan nilai PID
+Kp = 300; %gain proporsional
+Ki = 300; %gain integral
+Kd = 150; %gain derivative
+
+% Analisa PID
+C = pid(Kp,Ki,Kd);
+T = feedback(C*P_motor,1);
+t = 0:0.01:5;
+step(T,t)
+stepinfo(T)
+
+% Menghitung Steady State Error
+[y,t_out] = step(T,t);
+nilai_akhir_response = y(end);
+steady_state_error = abs(1 - nilai_akhir_response);
+steady_state_errorpersen = steady_state_error * 100
+--------------------------------------------------------------------------------------------------
+Grafik 5
+% Parameter sistem
+J = 0.05;
+b = 0.25;
+Ke = 0.01;
+Kt = 0.01;
+R = 1;
+L = 0.75;
+
+% Tentukan nilai Kp, Ki, dan Kd untuk menghasilkan:
+% Fast rise time; Minimal overshoot; Zero steady-state error
+
+% Open-Loop Step Response
+s = tf('s'); % Fungsi transfer
+P_motor = Ke/((J*s+b)*(L*s+R)+Kt^2); % Persamaan sistem
+
+% Tentukan nilai PID
+Kp = 30; %gain proporsional
+Ki = 200; %gain integral
+Kd = 170; %gain derivative
+
+% Analisa PID
+C = pid(Kp,Ki,Kd);
+T = feedback(C*P_motor,1);
+t = 0:1:14;
+step(T,t)
+stepinfo(T)
+
+% Menghitung Steady State Error
+[y,t_out] = step(T,t);
+nilai_akhir_response = y(end);
+steady_state_error = abs(1 - nilai_akhir_response);
+steady_state_errorpersen = steady_state_error * 100
